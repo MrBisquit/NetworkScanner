@@ -1,0 +1,33 @@
+﻿<Window x:Class="NetworkScanner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetworkScanner"
+        mc:Ignorable="d"
+        Height="450"
+        Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="NetworkScanner" IsEnabled="False"></MenuItem>
+                <MenuItem Header="Scan">
+                    <MenuItem Header="New scan" Name="MBTSNS" Click="MBTSNS_Click"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <DataGrid Grid.Row="1" Name="Data" IsReadOnly="True"></DataGrid>
+        <DockPanel Grid.Row="2" Visibility="Collapsed">
+            <StatusBar DockPanel.Dock="Bottom">
+                <ProgressBar Width="255" Height="15" Name="SBP"></ProgressBar>
+                <Label Name="SBL">Doing nothing</Label>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>
